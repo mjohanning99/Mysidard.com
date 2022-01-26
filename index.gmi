@@ -1,0 +1,20 @@
+```
+███╗   ███╗██╗   ██╗███████╗██╗██████╗  █████╗ ██████╗ ██████╗ 
+████╗ ████║╚██╗ ██╔╝██╔════╝██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗
+██╔████╔██║ ╚████╔╝ ███████╗██║██║  ██║███████║██████╔╝██║  ██║
+██║╚██╔╝██║  ╚██╔╝  ╚════██║██║██║  ██║██╔══██║██╔══██╗██║  ██║
+██║ ╚═╝ ██║   ██║   ███████║██║██████╔╝██║  ██║██║  ██║██████╔╝
+╚═╝     ╚═╝   ╚═╝   ╚══════╝╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+                                                               
+---------------------+++++++++++++++++++++++++++++++----------------------
+                       Ramblings on various topics
+---------------------+++++++++++++++++++++++++++++++----------------------
+```
+
+# Welcome to Mysidard.com
+
+Hello weary Gemini traveller and welcome to my capsule on the Geminispace. I have several presences on the regular web, but for the sake of keeping them separated, I am not going to mention these here. Instead, I have created this space as a personal hub for my various different hobbies and interests and hope you will find the information I will be sharing hereon helpful or interesting in some form.
+
+## About me
+=> about.gmi    🐦 About me
+If you want to find out more about me, this page will hopefully satisfy your curiosity; beware, however, that my interests are rather varied and often change depending on my mood and the page might, therefore, be appended from time to time to reflect my current interests.
