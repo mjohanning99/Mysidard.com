@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" style=''>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<style>p,pre,ul,blockquote,h1,h2,h3{margin-top:0;margin-bottom:0;overflow-wrap:break-word;}p:empty{padding-bottom:20px;}a{display:block;}pre{overflow-y:auto;}img,audio,video{display:block;max-width:100%;}body{margin:0 auto;padding:0.5rem;max-width:48rem;hyphens:manual;}p{font-family:georgia, times, serif;font-size:1.25rem;line-height:1.5;text-indent:0rem;}a{font-size:1.25rem;font-style:normal;font-family:georgia, times, serif;line-height:1.5;text-decoration:underline;}pre{padding:1rem;font-family:consolas, monaco, monospace;font-size:1rem;line-height:1;}h1{font-family:avenir, helvetica, arial, sans-serif;font-size:3rem;line-height:1.25;}h2{font-family:avenir, helvetica, arial, sans-serif;font-size:2.25rem;line-height:1.25;}h3{font-family:avenir, helvetica, arial, sans-serif;font-size:1.5rem;line-height:1.25;}ul{padding-left:1rem;list-style-type:circle;font-size:1.25rem;font-family:georgia, times, serif;line-height:1.25;}blockquote{margin-left:0;margin-right:0;padding-left:0.5rem;border-left-width:0.5rem;border-left-style:solid;font-family:georgia, times, serif;font-size:1.25rem;font-style:italic;line-height:1.25;}html,body,h1,h2,h3,p,a,ul,blockquote,pre::selection{color:black;background-color:white;}blockquote{border-color:black;}pre,::selection,a:hover{color:white;background-color:black;}@media (prefers-color-scheme: dark){html,body,h1,h2,h3,p,a,ul,blockquote,pre::selection{color:white;background-color:black;}blockquote{border-color:white;}pre,::selection,a:hover{color:black;background-color:white;}}</style>
+<title></title>
+</head>
+<body>
+<p>{{ .Content }}</p>
+<p>{{ if .Date.IsZero -}}{{ else }}</p>
+<p>{{ .Title }} was published on {{ .Date.Format &quot;2006-01-02&quot; }}</p>
+</body>
+</html>

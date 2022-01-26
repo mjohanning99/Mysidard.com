@@ -1,0 +1,5 @@
+title = "Mysidard’s Gemlog"
+url = "mysidard.com"
+source_dir = "content"
+dest_dir = "public"
+feed_path = "posts/"

@@ -1,0 +1,7 @@
+{{ .Content }}
+{{ $postlength := len .Children.posts -}}
+{{ if gt $postlength 0 -}}
+## Posts on {{ .Config.Title }}
+{{ range $post := .Children.posts }}
+=> {{ $post.URLPath }} {{ $post.Date.Format "2006-01-02" }} - {{ $post.Title }}{{ end }}
+{{ end }}

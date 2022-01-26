@@ -1,0 +1,19 @@
+```
+    __  ___           _     __               __        ______               __           
+   /  |/  /_  _______(_)___/ /___ __________/ /____   / ____/__  ____ ___  / /___  ____ _
+  / /|_/ / / / / ___/ / __  / __ `/ ___/ __  / ___/  / / __/ _ \/ __ `__ \/ / __ \/ __ `/
+ / /  / / /_/ (__  ) / /_/ / /_/ / /  / /_/ (__  )  / /_/ /  __/ / / / / / / /_/ / /_/ / 
+/_/  /_/\__, /____/_/\__,_/\__,_/_/   \__,_/____/   \____/\___/_/ /_/ /_/_/\____/\__, /  
+       /____/                                                                   /____/   
+```
+=> /index.gmi 🏠Back Home
+
+# Mysidard’s Gemlog
+
+Hello everyone and welcome to my Gemlog. This little “corner of ramblings” will contain posts of various length and quality and about various topics.  There is not going to be a general theme to this Gemlog; rather, I will be posting about things I find interesting at a particular moment. 
+
+If I am working on a particular subject and want to compile some notes and information on that subject, you will find information about that in a Notes section I will be adding to the homepage as I see fit. 
+
+## Posts on Mysidard’s Gemlog
+
+=> posts/2020-11-24-create-gemlog-with-gssg.gmi 2020-11-24 - Hello there
