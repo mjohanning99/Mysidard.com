@@ -1,5 +1,5 @@
-title = "Mysidard’s Gemlog"
+title = "Mysidard’s Gemlog — Thoughts and Ramblings"
 url = "mysidard.com"
 source_dir = "content"
 dest_dir = "public"
-feed_path = "posts/"
+feed_path = "/"

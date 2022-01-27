@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" style=''>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<style>p,pre,ul,blockquote,h1,h2,h3{margin-top:0;margin-bottom:0;overflow-wrap:break-word;}p:empty{padding-bottom:20px;}a{display:block;}pre{overflow-y:auto;}img,audio,video{display:block;max-width:100%;}body{margin:0 auto;padding:0.5rem;max-width:48rem;hyphens:manual;}p{font-family:georgia, times, serif;font-size:1.25rem;line-height:1.5;text-indent:0rem;}a{font-size:1.25rem;font-style:normal;font-family:georgia, times, serif;line-height:1.5;text-decoration:underline;}pre{padding:1rem;font-family:consolas, monaco, monospace;font-size:1rem;line-height:1;}h1{font-family:avenir, helvetica, arial, sans-serif;font-size:3rem;line-height:1.25;}h2{font-family:avenir, helvetica, arial, sans-serif;font-size:2.25rem;line-height:1.25;}h3{font-family:avenir, helvetica, arial, sans-serif;font-size:1.5rem;line-height:1.25;}ul{padding-left:1rem;list-style-type:circle;font-size:1.25rem;font-family:georgia, times, serif;line-height:1.25;}blockquote{margin-left:0;margin-right:0;padding-left:0.5rem;border-left-width:0.5rem;border-left-style:solid;font-family:georgia, times, serif;font-size:1.25rem;font-style:italic;line-height:1.25;}html,body,h1,h2,h3,p,a,ul,blockquote,pre::selection{color:black;background-color:white;}blockquote{border-color:black;}pre,::selection,a:hover{color:white;background-color:black;}@media (prefers-color-scheme: dark){html,body,h1,h2,h3,p,a,ul,blockquote,pre::selection{color:white;background-color:black;}blockquote{border-color:white;}pre,::selection,a:hover{color:black;background-color:white;}}</style>
+<title>Setting Up A Gemlog (and Capsule) and Mirroring It To HTTPS — The Hard Way</title>
+</head>
+<body>
+<h1>Setting Up A Gemlog (and Capsule) and Mirroring It To HTTPS — The Hard Way</h1>
+<p></p>
+<p>The following is a write-up was created rather late at night after a somewhat busy day at work; I am usually a bit more “eloquent” and thorough in my writing as I am in this post. However, I wanted to share this with you, as I am not sure when I will have time to work on this again. I will, however, keep you posted on this and write a new entry into my Gemlog once I have improved upon my setup and script.</p>
+<p></p>
+<p>There are surely countless of ways of mirroring your Gemini capsule on to the regular Web so that “normal” people will also be able to view it without having to download an entirely new browser. However, as I wasn’t really able to find — or, perhaps, too lazy — one that suited my needs, I decided to make one myself. </p>
+<p></p>
+<h2>My Setup</h2>
+<p>Before I show you the script that I have created, I am going to briefly go through my setup and give you a small disclaimer: I am still an absolutely newbie when it comes to this kind of stuff, I am almost certain that the thing I have created is absolutely convoluted; nevertheless, it works for me and I will undoubtedly continue working on it over the coming weeks and, in doing so, improve it further.</p>
+<p></p>
+<p>My capsule lives within a folder called mysidard.com and within it, the following files can be found: —</p>
+<p></p>
+<pre>
+ 100K └─┬ .                        │██████████ │ 100%
+  52K   ├─┬ html                   │    ██████ │  52%
+  36K   │ ├─┬ gemlog               │    ░░████ │  36%
+  16K   │ │ ├── public             │    ░░▒▒██ │  16%
+  12K   │ │ ├── content            │    ░░▒▒██ │  12%
+ 8.0K   │ │ └── templates          │    ░░▒▒▒█ │   8%
+ 8.0K   │ ├── index.html           │    ░░░░░█ │   8%
+ 8.0K   │ └─┬ about                │    ░░░░░█ │   8%
+ 8.0K   │   └── aboutme.html       │    ░░░░░█ │   8%
+  28K   ├─┬ gemlog                 │       ███ │  28%
+ 8.0K   │ ├─┬ templates            │       ░░█ │   8%
+ 4.0K   │ │ ├── page.html           │       ░░█ │   4%
+ 4.0K   │ │ └── index.html          │       ░░█ │   4%
+ 8.0K   │ ├─┬ public               │       ░░█ │   8%
+ 4.0K   │ │ ├── posts              │       ░░█ │   4%
+ 4.0K   │ │ └── index.html          │       ░░█ │   4%
+ 8.0K   │ ├─┬ content              │       ░░█ │   8%
+ 4.0K   │ │ ├── posts              │       ░░█ │   4%
+ 4.0K   │ │ └── index.html          │       ░░█ │   4%
+ 4.0K   │ └── config.toml          │       ░░█ │   4%
+ 8.0K   ├─┬ bin                    │         █ │   8%
+ 4.0K   │ ├── move_to_var_www.sh   │         █ │   4%
+ 4.0K   │ └── create_and_convert.sh│         █ │   4%
+ 8.0K   ├─┬ about                  │         █ │   8%
+ 8.0K   │ └── aboutme.html          │         █ │   8%
+ 4.0K   └── index.html              │         █ │   4%
+</pre>
+<p></p>
+<p>And the following is a brief overview of the folders and what they are used for: —</p>
+<ul>
+<li>The root folder (.) contains the regular .html index file. </li>
+<li>The about folder contains things about me and the website. </li>
+<li>The gemlog folder contains the files needed for the Gemlog</li>
+<li>The bin folder contains the scripts I created for converting everything to HTML </li>
+<li>The html folder contains the capsule but converted to HTML (and the same directory structure is repeated therein)</li>
+</ul>
+<p></p>
+<h2>Setting Up A Gemlog</h2>
+<p></p>
+<p>I use the rather nice little program called “gssr”[1] for managing my gemlog. I am sure there’s other, more feature-complete tools for managing one’s Gemlog, but I found gssg nice and simple to use. After downloading and compiling it (instructions on how to do so can be found in its repository), you can simply run the following command to create a new gemlog: —</p>
+<p></p>
+<pre>
+gssg -init gemlog_name(.com)
+</pre>
+<p></p>
+<p>After running the command, it will generate the following directory structure: —</p>
+<p></p>
+<pre>
+ 4.0K   ┌── config.toml│                 █████ │  20%
+ 4.0K   │ ┌── index.html│                 █████ │  20%
+ 4.0K   ├─┴ content    │                 █████ │  20%
+ 4.0K   │ ┌── atom.xml │        ░░░░░░░░░█████ │  20%
+ 4.0K   │ ├── index.html│        ░░░░░░░░░█████ │  20%
+ 4.0K   │ ├── page.html │        ░░░░░░░░░█████ │  20%
+  12K   ├─┴ templates  │        ██████████████ │  60%
+  20K ┌─┴ .            │██████████████████████ │ 100%
+</pre>
+<p></p>
+<p>Once a new Gemlog has been created, change into the newly created directory (it’s simply called gemlog in my case) and edit the file called config.toml; it is used for setting a title to your Gemlog, setting the URL, the directories it uses et cetera. In the case of my Gemlog, it looks as follows: —</p>
+<p></p>
+<pre title="toml">
+title = "Mysidard’s Gemlog — Thoughts and Ramblings"
+url = "mysidard.com"
+source_dir = "content"
+dest_dir = "public"
+feed_path = "/"
+</pre>
+<p></p>
+<p>Then, a new post can be created by entering the content directory and creating a new folder called posts. Whilst in that folder, create a new file and name it as follows (replacing the placeholders as needed): —</p>
+<p></p>
+<pre>
+YYYY-MM-DD-this-is-a-gemlog.html
+</pre>
+<p></p>
+<p>You can now write your post and move back into the previous created gemlog directory. From there, excute the gssg command and your Gemlog should be built and your posts should have been placed in the directory called public. This is the directory you should point visitors towards.</p>
+<p></p>
+<h2>Converting to HTML</h2>
+<p>Converting Gemtext to HTML can be achieved by using the gmi-web[2] tool which can be downloaded via npm. Create two folders in your capsule’s root (not the Gemlog’s root) called html and bin (you can view my directory structure at the very top of this page again). After having done so, move into the newly created bin directory and create a file titled create_and_convert.sh with the following contents: —</p>
+<p></p>
+<pre title="bash">
+
+echo "The following program will update the Gemlog using gssr, convert all *.html \ 
+pages to HTML (and convert their links too) and move the converted pages to HTML."
+echo "Press Enter if you want to continue."
+read enter
+
+cd ..
+echo "Removing contents of html directory. Continue?"
+read enter
+rm -rf html/*
+cd gemlog/
+gssg
+
+cd ..
+echo "Converting GMI to HTML and moving them to html directory. Continue?"
+read enter
+gmi-web --html en $(find . -name '*gmi')
+rsync -rv --include '*/' --include '*.html' --exclude '*' --prune-empty-dirs . html --remove-source-files
+rsync -rv --include '*/' --include '*.xml' --exclude '*' --prune-empty-dirs . html
+find html/ -type f -name "*.html" -print0 | xargs -0 sed -i '' -e 's/\.html/\.html/g'
+</pre>
+<p></p>
+<p>This script will remove all contents from the html directory, build the Gemlog using gssg and then convert all Gemtext files to HTML and move them to the previously mentioned html directory. It will also convert all links, so that the created HTML pages can be navigated through even if the original Gemtext files contained relative links — though it must be mentioned that the link conversion is half-assed at best at present. It will convert literally every instance of .html to .html (and if you’re viewing this on the HTTPS mirror, both will simply read .html) that it finds in the HTML documents created by gmi-web. </p>
+<p></p>
+<p>I will, over the upcoming days and weeks, improve this script so that it only converts actual links and nothing else. Until then, however, I find this script more than adequate for my current needs and it gets the job done fairly quickly and efficiently, in my opinion. If you do plan on using this, I advice against doing it on a capsule that you have absolutely no backup of, as I cannot guarantee that no data will be lost in the process of using it. It works for me and hasn’t yet deleted anything it shouldn’t have deleted, but I cannot vouch for it always running as intended — especially as I haven’t put any safeties in yet. </p>
+<p></p>
+<p>If you do want to use it, however, you can run the script using the following commands: —</p>
+<p></p>
+<pre title="bash">
+chmod u+x create_and_convert.sh
+./create_and_convert
+</pre>
+<p>The resulting HTML files can then simply be put into your Apache server’s document root (or whatever server software you may be using). </p>
+<p></p>
+<p></p>
+<h2>Links</h2>
+<a href="https://sr.ht/~gsthnz/gssg/">[1] Repository for gssr</a>
+<a href="https://codeberg.org/talon/gmi-web">[2] Repository for gmi-web</a>
+</body>
+</html>

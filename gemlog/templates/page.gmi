@@ -1,3 +1,5 @@
+=> /index.gmi 🏠Back Home
+=> /gemlog/public/index.gmi 💎Back To Gemlog
 {{ .Content }}
 {{ if .Date.IsZero -}}{{ else }}
 {{ .Title }} was published on {{ .Date.Format "2006-01-02" }}

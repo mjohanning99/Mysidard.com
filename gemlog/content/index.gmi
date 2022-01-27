@@ -13,3 +13,5 @@
 Hello everyone and welcome to my Gemlog. This little “corner of ramblings” will contain posts of various length and quality and about various topics.  There is not going to be a general theme to this Gemlog; rather, I will be posting about things I find interesting at a particular moment. 
 
 If I am working on a particular subject and want to compile some notes and information on that subject, you will find information about that in a Notes section I will be adding to the homepage as I see fit. 
+
+=> /gemlog/public/atom.xml ⚛Atom Feed

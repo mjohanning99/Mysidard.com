@@ -14,6 +14,8 @@ Hello everyone and welcome to my Gemlog. This little “corner of ramblings” w
 
 If I am working on a particular subject and want to compile some notes and information on that subject, you will find information about that in a Notes section I will be adding to the homepage as I see fit. 
 
-## Posts on Mysidard’s Gemlog
+=> /gemlog/public/atom.xml ⚛Atom Feed
 
-=> posts/2020-11-24-create-gemlog-with-gssg.gmi 2020-11-24 - Hello there
+## Posts on Mysidard’s Gemlog — Thoughts and Ramblings
+
+=> posts/2022-01-27-capsule-mirror-hard-way.gmi 2022-01-27 - Setting Up A Gemlog (and Capsule) and Mirroring It To HTTPS — The Hard Way
