@@ -27,6 +27,7 @@ This contains my gemlog, the Gemini version of a blog. On here, I will be postin
 ## Contact
 => me@mysidard.com 📧me@mysidard.com
 You may use the email above to contact me about anything you like — I am always open for a chat!
+
 => https://meow.social/@mysidard 🐘@mysidard@meow.social on Mastodon
 You can also find and message me on Mastodon. 
 
