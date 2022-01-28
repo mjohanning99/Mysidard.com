@@ -39,3 +39,5 @@ I also watch Anime from time to time and really liked Shin Seiki Evangelion. I h
 Listening to music is also something I enjoy greatly, even though my taste in music is rather strange. I listen to a lot of Vaporwave, 70s-90s (Finnish music from that area especially), synthwave and other types of electronic music (Klaus Schulze is really nice), music from the DPRK and tonnes of other stuff. 
 
 Playing games is another thing I spend my time on, though I don’t play games nearly as often as I used to anymore. When I do play games nowadays, I mostly play adventure games (Starship Titanic, Myst, Quern, Shivers). 
+
+I also very much like creating AI-generated art using programs like VQGAN+CLIP. I have a rather nice computer to do this with, as it has an 8 GB NVIDIA QUADRO M5000 graphics card which is just enough to create somewhat decently-sized images (just under 500x500). 
