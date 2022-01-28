@@ -17,12 +17,18 @@ Hello weary Gemini traveller and welcome to my capsule on the Geminispace. I hav
 
 
 ## About
-=> about/aboutme.gmi    🐦 About Me
+=> about/aboutme.gmi    🐦About Me
 If you want to find out more about me, this page will hopefully satisfy your curiosity; beware, however, that my interests are rather varied and often change depending on my mood and the page might, therefore, be appended from time to time to reflect my current interests.
 
 ## Gemlog
 => gemlog/public/index.gmi 💎My Gemlog
 This contains my gemlog, the Gemini version of a blog. On here, I will be posting about various topics that interest me, so be sure to check out the About Me page to find out what that might be.
+
+## Contact
+=> me@mysidard.com 📧me@mysidard.com
+You may use the email above to contact me about anything you like — I am always open for a chat!
+=> https://meow.social/@mysidard 🐘@mysidard@meow.social on Mastodon
+You can also find and message me on Mastodon. 
 
 ## Links
 => https://mysidard.com 🕸HTTPS Mirror 
@@ -30,3 +36,6 @@ This will lead you to the HTTPS version of my capsule.
 
 => gemlog/public/atom.xml ⚛Atom Feed
 This is the Atom feed for my Gemlog.
+
+=> //skyjake.fi/lagrange/ 🌊Lagrange Browser
+Lagrange is my preferred browser for surfing Geminispace. I highly recommend you use it as well!
