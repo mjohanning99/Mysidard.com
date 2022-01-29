@@ -3,8 +3,16 @@
 <title></title>
 <link href="mysidard.com"/>
 <link rel="self" href="mysidard.com"/>
-<updated>2022-01-29T18:55:41+01:00</updated>
+<updated>2022-01-29T20:23:36+01:00</updated>
 <id>mysidard.com</id>
+<entry>
+	<title>Proxying Gemini to HTTPS</title>
+	<link href="mysidard.com/posts/2022-01-29-proxying-gemini.gmi"/>
+	<id>mysidard.com/posts/2022-01-29-proxying-gemini.gmi</id>
+	<updated>2022-01-29T00:00:00Z</updated>
+	<content src="mysidard.com/posts/2022-01-29-proxying-gemini.gmi" type="text/gemini"></content>
+</entry>
+
 <entry>
 	<title>Setting Up A Gemlog (and Capsule) and Mirroring It To HTTPS — The Hard Way</title>
 	<link href="mysidard.com/posts/2022-01-27-capsule-mirror-hard-way.gmi"/>

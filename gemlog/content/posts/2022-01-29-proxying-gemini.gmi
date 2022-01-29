@@ -1,0 +1,143 @@
+# Proxying Gemini to HTTPS
+On a previous post on my Gemlog, I talked about my rather convoluted way of converting my page to HTML and serving it via Apache to people on the regular Web; and whilst this admittedly rather strange setup worked for me, I wanted to find something that was a little easier to maintain and that would not require me to go through a tonne of steps simply to have a HTTPS version of my site available. I mentioned, in my previous post, how I was unable to find a suitable solution for this proxying / mirroring of my capsule — well, I have now finally come across one I really enjoy. 
+
+I have also started using a different Gemini server — called Bliz — that I will more thoroughly talk about in another Gemlog.
+
+## Kineto 
+Before diving into the Apache configuration, we’ll start by looking at how to use Kineto and how to make it start on boot.
+
+### Installation and Configuration 
+As I was scouring the Web for an alternative way of making my capsule available via HTTPS, I stumbled across a little program called Kineto[1]. This proxy, written in Go, allows you to pass a Gemini server’s URL to it as a command line argument and it serves the proxied content as HTTP on port 8080. Generally, you would want to run it behind a reverse proxy so that you can simply have someone type your capsule’ FQDN into a regular browser and have them automatically see the content proxied through Kineto. I am going to be showing you how to do this using Apache 2 — so be sure to have that installed on your system. The instructions I am providing have been tested on Debian 11. 
+
+First, you need to install Go: —
+```
+sudo apt install golang-go && go version
+```
+
+If the above command finishes and tells you that you have installed Go version 1.5 or higher, you’re good to go. Next, you need to clone the repository, change into its directory and compile the binary: —
+```
+git clone https://git.sr.ht/~sircmpwn/kineto && cd kineto && go build
+```
+
+After this chain of commands has finished, you should have ended up with a binary inside the kineto directory titled ”kineto” which can be run by typing ”./kineto”. Upon doing so, you should be given the following message: —
+```
+2022/01/29 19:48:08 Usage: ./kineto <gemini root>
+```
+
+I am going to assume you already have a Gemini server running and I’ll be using my server’s FQDN as a placeholder. To run Kineto on your capsule, you will need to type the following: —
+```
+./kineto gemini://mysidard.com
+# Output: 2022/01/29 19:51:04 HTTP server listening on :8080
+```
+
+If you now open a regular HTTP-capable browser and navigate to localhost:8080, you should be seeing your website proxied through Kineto. 
+
+### Making Kineto Start on Boot 
+If you want Kineto to start on boot and have it run as a systemd service, you can do that quite easily. First, make note of the full path of your binary file; in my case, it is as follows: —
+```
+gemini@localhost ~/g/kineto (master)> pwd
+/home/gemini/gemini/kineto
+```
+
+Next, create file using your preferred text editor called “kineto.service“ and add the following contents, replacing the placeholders as needed: —
+```
+[Unit]
+Description=kineto
+After=network.target
+
+[Service]
+WorkingDirectory=/path/to/kineto/install
+User=your_username_here
+Type=simple
+ExecStart=/path/to/kineto/install/kineto gemini://caspule-address.com
+
+[Install]
+WantedBy=default.target
+```
+
+Next, move that file and start and enable the service: —
+```
+sudo mv kineto.service /etc/systemd/system/
+sudo systemctl enable kineto.service 
+sudo systemctl start kineto.service 
+```
+
+And you’re done! Kineto should be running in the background now and start on every boot as well.
+
+## Apache Reverse Proxy and Certificates
+The following will go through the steps required to run Kineto behind an Apache reverse proxy. 
+
+### Installing Stuff
+The following instructions are assuming you already have a FQDN to work with; I will, once again, be using “mysidard.com” as a placeholder and you will have to replace it accordingly. 
+
+First, we must install Apache 2, cerbot and a bunch of modules for it; to do so, you must run the following commands: —
+```
+sudo apt install apache2 
+sudo apt install certbot
+sudo a2enmod proxy_http proxy ssl
+```
+
+### Creating Certificates
+After having done so, you should start by creating certificates for your server. This will vary depending on whether or not you’re using Cloudflare, but it generally consists of running the following command: —
+
+```
+certbot certonly -d mysidard.com 
+```
+
+If you are using Cloudflare, you will need to download certbot’s Cloudflare plugin and go through a few other steps[2]; you can install the plugin by typing the following command: —
+
+```
+sudo apt install python3-certbot-dns-cloudflare
+```
+
+Once you have created a certificate for your domain, it usually ends up in “/etc/letsencrypt/live/domain.com/fullchain.pem” and the key file will be at “/etc/letsencrpyt/live/domain.com/privkey.pem” — you will be needing both files later on.
+
+### Creating the Apache Reverse Proxy
+Create a file inside the “/etc/apache2/sites-available” directory titled “yourdomain.com.conf” and paste the following contents whilst, once again, replacing the placeholders as needed: —
+
+```
+<VirtualHost *:80>
+    ServerName yourdomain.com
+    Redirect permanent / https://yourdomain.com/
+</VirtualHost>
+
+<VirtualHost *:443>
+    LoadModule proxy_module modules/mod_proxy.so
+    LoadModule proxy_http_module modules/mod_proxy_http.so
+    SSLEngine On
+    SSLCertificateFile /etc/letsencrypt/live/yourdomain.com/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/yourdomain.com/privkey.pem
+    SSLProxyEngine on
+    ServerName yourdomain.com
+    LogLevel warn
+    CustomLog ${APACHE_LOG_DIR}/yourdomain.com-access.log combined
+    ErrorLog ${APACHE_LOG_DIR}/yourdomain.com-error.log
+
+    ProxyPass         / http://127.0.0.1:8080/
+    ProxyPassReverse  / http://127.0.0.1:8080/
+    ProxyPreserveHost on
+    RequestHeader     set       X-Forwarded-Proto "https"
+    SSLProxyVerify none
+    SSLProxyCheckPeerCN off
+    SSLProxyCheckPeerName off
+    SSLProxyCheckPeerExpire off
+    ProxyErrorOverride Off
+    ProxyRequests Off
+</VirtualHost>
+```
+
+Save the file and run the following commands to enable your new configuration: —
+```
+sudo a2ensite yourdomain.com.conf
+sudo systemctl restart apache2 
+```
+
+And you are done! You should now be able to go to yourdomain.com and see your Gemini capsule, even if you are using a browser which does not natively support the Gemini protocol. 
+
+## Conclusion
+I think this is a very nice and simple way of making a Gemini capsule available on the regular Web. If you have any questions or trouble getting this to work, feel free to contact me using me@mysidard.com. We’ll get it to work, I am sure!
+
+
+## Links
+=> https://sr.ht/~sircmpwn/kineto/ [1] Kineto Gemini-to-HTTPS proxy
+=> https://certbot-dns-cloudflare.readthedocs.io/en/stable/ [2] Cerbot Cloudflare

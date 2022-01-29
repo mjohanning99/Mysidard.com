@@ -18,4 +18,6 @@ If I am working on a particular subject and want to compile some notes and infor
 
 ## Posts on Mysidard’s Gemlog — Thoughts and Ramblings
 
-=> posts/2022-01-27-capsule-mirror-hard-way.gmi 2022-01-27 - Setting Up A Gemlog (and Capsule) and Mirroring It To HTTPS — The Hard Way
+=> posts/2022-01-29-proxying-gemini.gmi 📜2022-01-29 - Proxying Gemini to HTTPS
+=> posts/2022-01-27-capsule-mirror-hard-way.gmi 📜2022-01-27 - Setting Up A Gemlog (and Capsule) and Mirroring It To HTTPS — The Hard Way
+
