@@ -3,5 +3,26 @@ gem_header 20 'text/gemini'
 set b_current_time (date +%c)
 set b_words (bliz_word_count)
 %%%
+=> /index.gmi 🏠Home
 
-% echo uptime %
+# About the Server
+Here you will find some information about the server that is running this capsule.
+
+## Hardware
+This server is running on a very cheap VPS with a very minimal amount of CPU power, RAM and space. I have a handful of other servers that run my other websites, but I decided it would be best for me to have my own server for my capsule on Geminispace. 
+
+## Software
+I am currently running Debian 11 with Bliz as my Gemini server and Kineto as my Gemini-to-HTTPS proxy. Check out my Gemlog if you want to find out more about both of these; I can especially recommend Bliz!
+
+## Stats
+And here are some random stats because why not?
+
+### Uptime
+```
+% uptime
+```
+
+### Size of Files on Server
+```
+% dust --ignore-directory ".git" -c -r -d 2 /home/gemini/gemini/bliz/serve/
+```

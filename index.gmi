@@ -20,6 +20,9 @@ Hello weary Gemininaut and welcome to my capsule on the Geminispace. I have seve
 => about/aboutme.gmi    🐦About Me
 If you want to find out more about me, this page will hopefully satisfy your curiosity; beware, however, that my interests are rather varied and often change depending on my mood and the page might, therefore, be appended from time to time to reflect my current interests.
 
+=> about/server.bliz 💾About the Server
+Some information about the server running this capsule.
+
 ## Gemlog (and Other Writings)
 => gemlog/public/index.gmi 💎My Gemlog
 This contains my gemlog, the Gemini version of a blog. On here, I will be posting about various topics that interest me, so be sure to check out the About Me page to find out what that might be.
