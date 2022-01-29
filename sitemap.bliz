@@ -28,10 +28,14 @@ This sitemap is automatically created whenever its URL is accessed using the Bli
 
 %%%
 set contents_raw (find serve/* -print)
-set contents (string replace "serve/" "" $contents_raw)
 
-for content in $contents
-	echo "=> $content"
+for content in $contents_raw
+	set content_stripped (string replace "serve/" "" $content)
+	if test -d $content 
+		echo "=> $content_stripped 📂$content_stripped"
+	else
+		echo "=> $content_stripped ↳📄$content_stripped"
+	end
 end
 
 %%%
