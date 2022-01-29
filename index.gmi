@@ -40,3 +40,7 @@ This is the Atom feed for my Gemlog.
 
 => //skyjake.fi/lagrange/ 🌊Lagrange Browser
 Lagrange is my preferred browser for surfing Geminispace. I highly recommend you use it as well!
+
+## Sitemap
+=> sitemap.bliz 🗺Sitemap
+This contains an automatically created sitemap.

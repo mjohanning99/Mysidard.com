@@ -1,0 +1,37 @@
+%%%
+gem_header 20 'text/gemini'
+set b_current_time (date +%c)
+set b_words (bliz_word_count)
+%%%
+
+```
+     ________________________________         
+    /                                "-_          
+   /      .  |  .                       \          
+  /      : \ | / :                       \         
+ /        '-___-'                         \      
+/_________________________________________ \      
+     _______| |________________________--""-L 
+    /       F J                              \ 
+   /       F   J                              L
+  /      :'     ':                            F
+ /        '-___-'                            / 
+/_________________________________________--"  
+```
+
+=> /index.gmi 🏠Home
+
+# Sitemap for Mysidard.com
+This sitemap is automatically created whenever its URL is accessed using the Bliz Gemini server and a Fish script.
+
+## Contents
+
+%%%
+set contents_raw (find serve/* -print)
+set contents (string replace "serve/" "" $contents_raw)
+
+for content in $contents
+	echo "=> $content"
+end
+
+%%%
