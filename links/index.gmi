@@ -25,6 +25,9 @@ Community-based science-fiction writing.
 => //warmedal.se/~antenna/ 📡Antenna
 A feed aggregator.
 
+=> //astrobotany.mozz.us 🌸Astrobotany
+A fun little game where you care for flowers.
+
 ## Web
 => https://mysidard.com 🕸HTTPS Mirror 
 This will lead you to the HTTPS version of my capsule. 
