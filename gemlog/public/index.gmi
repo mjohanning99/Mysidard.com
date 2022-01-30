@@ -15,7 +15,7 @@ Hello everyone and welcome to my Gemlog. This little “corner of ramblings” w
 If I am working on a particular subject and want to compile some notes and information on that subject, you will find information about that in a Notes section I will be adding to the homepage as I see fit. 
 
 => /gemlog/public/atom.xml ⚛Atom Feed
-
+Use this link if you want to subscribe to my Gemlog via Atom. 
 ## Posts on Mysidard’s Gemlog — Thoughts and Ramblings
 
 => posts/2022-01-29-proxying-gemini.gmi 📜2022-01-29 - Proxying Gemini to HTTPS
