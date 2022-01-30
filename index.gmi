@@ -18,7 +18,7 @@ Hello weary Gemininaut and welcome to my capsule on the Geminispace. I have seve
 
 ## About
 => about/aboutme.gmi    🐦About Me
-If you want to find out more about me, this page will hopefully satisfy your curiosity; beware, however, that my interests are rather varied and often change depending on my mood and the page might, therefore, be appended from time to time to reflect my current interests.
+If you want to find out more about me or contact me, this page will hopefully satisfy your curiosity; beware, however, that my interests are rather varied and often change depending on my mood and the page might, therefore, be appended from time to time to reflect my current interests.
 
 => about/server.bliz 💾About the Server
 Some information about the server running this capsule.
@@ -26,13 +26,6 @@ Some information about the server running this capsule.
 ## Gemlog (and Other Writings)
 => gemlog/public/index.gmi 💎My Gemlog
 This contains my gemlog, the Gemini version of a blog. On here, I will be posting about various topics that interest me, so be sure to check out the About Me page to find out what that might be.
-
-## Contact
-=> me@mysidard.com 📧me@mysidard.com
-You may use the email above to contact me about anything you like — I am always open for a chat!
-
-=> https://meow.social/@mysidard 🐘@mysidard@meow.social on Mastodon
-You can also find and message me on Mastodon. 
 
 ## Links
 => https://mysidard.com 🕸HTTPS Mirror 

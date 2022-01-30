@@ -8,6 +8,15 @@
 (___/    \___)(_______/  \"_____/   (__________)     \__|        |___|\__/|___| \_______) 
 ```
 => /index.gmi 🏠Back Home
+
+# Contact
+
+=> me@mysidard.com 📧me@mysidard.com
+You may use the email above to contact me about anything you like — I am always open for a chat!
+
+=> https://meow.social/@mysidard 🐘@mysidard@meow.social on Mastodon
+You can also find and message me on Mastodon. 
+
 # About Me
 
 I am Mysidard — which is, obviously, not my real name — and I am a German in his twenties. I am currently working (as of Wednesday, January 26th 2022) at a small company located in North Western Germany and I am both the project leader for our LoRaWAN — which is supposed to become the first extensive LoRaWAN in the entirety of Germany — project and I also work in customer support. 
