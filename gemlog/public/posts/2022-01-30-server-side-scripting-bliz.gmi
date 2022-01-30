@@ -1,0 +1,96 @@
+=> /index.gmi 🏠Back Home
+=> /gemlog/public/index.gmi 💎Back To Gemlog
+# Server-side Scripting Using Bliz (And Fish)
+I have been on the lookout for a nice, simple-to-use Gemini server that allows server-side scripting in a language that is not too difficult to learn — and I believe I may have found just that, namely the Bliz[1] server. I was surprised to learn that it was, out of all the scripting languages available, written in Fish[2] and that it works very nicely. 
+
+In this Gemlog entry, I will be briefly covering how to get the server up and running and how to write .bliz scripts; these instructions have been tested on Debian 11.
+
+## Installation
+The installation of Bliz is quite straightforward as long as if you have the Fish shell installed. If you don’t, you can install it by simply typing the following in your terminal: —
+
+```
+sudo apt-get install fish
+```
+
+This should download and install fish from the Debian repositories. Afterwards, you should install “ncat", clone the Bliz repository and change into its directory: —
+
+```
+sudo apt install ncat
+git clone https://git.sr.ht/~cadence/bliz && cd bliz
+```
+
+After having done that, the first thing you must do is to create certificates for your capsule. To do that, you can use the “certs.fish” script. Simply type the following whilst in the aforementioned bliz directory: —
+
+```
+./certs.fish
+```
+
+You will be asked to enter your capsule’s domain name and a certificate will automatically be generated. Afterwards, you can move your capsule’s contents into the “serve/” directory and change the config so that Bliz uses “index.gmi” and “index.bliz” as its index files. To do that, open the “personal/config.fish” file and add the following line: —
+
+```
+set serve_index index.gmi index.bliz
+```
+
+This way, whenever you open a directory that has either an “index.gmi” or an “index.bliz” file located within it, Bliz will display that instead of the default directory listing it displays otherwise. 
+
+You can now start the server: —
+
+```
+./main.fish
+```
+
+Navigate to your caspule’s domain (or to localhost) and you should see it displayed in the browser of your choice. 
+
+## Scripting
+However, simply running a Gemini server is nothing special and any number of programs could’ve done the job just as well as Bliz. What sets Bliz apart from other servers is its inclusion of server-side scripting using Fish script; and we’ll take a quick look at how to do that. 
+
+First, create a file in the “serve/” directory named “testing_bliz.bliz”, open it in an editor and paste the following lines: —
+
+```
+%%%
+gem_header 20 'text/gemini'
+%%%
+```
+
+This header is a requirement as whatever Gemini browser you may be using will, otherwise, not display anything. 
+
+Whenever you want to add Fish script, you need to either place it inside a block surrounded by percent signs (if it spans several lines) or write your code on a single line beginning with a percent sign; the above-mentioned header statement could’ve, therefore, also been written in the following manner: —
+
+```
+% gem_header 20 'text/gemini'
+```
+
+## Example file
+If you want to see an example of how to write a .bliz file, here’s what the code for this capsule’s automatically-generating sitemap looks like: —
+
+```
+## Contents
+
+%%%
+set contents_raw (find serve/* -path "serve/bin" -prune -o -path "serve/gemlog/templates" \ 
+-prune -o -path "serve/gemlog/content" -prune -o -path "serve/gemlog/config.toml" -prune -o -print)
+
+for content in $contents_raw
+	set content_stripped (string replace "serve/" "" $content)
+	if test -d $content 
+		echo "=> $content_stripped 📂$content_stripped"
+	else
+		if string match -q 'serve/*/*' $content
+			echo "=> $content_stripped ↳📄$content_stripped"
+		else
+			echo "=> $content_stripped 📄$content_stripped"
+		end
+	end
+end
+%%%
+```
+
+## Conclusion
+Personally, I think this is a lovely little server that allows for some rather powerful — and yet still rather simple — server-side scripting and I would definitely recommend that you check it out. 
+
+
+## Links
+=> https://git.sr.ht/~cadence/bliz [1] Link to Bliz repository
+=> https://fishshell.com/ [2] The Fish Shell
+
+Server-side Scripting Using Bliz (And Fish) was published on 2022-01-30

@@ -3,8 +3,16 @@
 <title></title>
 <link href="mysidard.com"/>
 <link rel="self" href="mysidard.com"/>
-<updated>2022-01-30T13:09:29+01:00</updated>
+<updated>2022-01-30T18:36:07+01:00</updated>
 <id>mysidard.com</id>
+<entry>
+	<title>Server-side Scripting Using Bliz (And Fish)</title>
+	<link href="mysidard.com/posts/2022-01-30-server-side-scripting-bliz.gmi"/>
+	<id>mysidard.com/posts/2022-01-30-server-side-scripting-bliz.gmi</id>
+	<updated>2022-01-30T00:00:00Z</updated>
+	<content src="mysidard.com/posts/2022-01-30-server-side-scripting-bliz.gmi" type="text/gemini"></content>
+</entry>
+
 <entry>
 	<title>Proxying Gemini to HTTPS</title>
 	<link href="mysidard.com/posts/2022-01-29-proxying-gemini.gmi"/>

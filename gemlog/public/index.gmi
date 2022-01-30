@@ -19,6 +19,7 @@ Use this link if you want to subscribe to my Gemlog via Atom.
 
 ## Posts on Mysidard’s Gemlog — Thoughts and Ramblings
 
+=> posts/2022-01-30-server-side-scripting-bliz.gmi 📜2022-01-30 - Server-side Scripting Using Bliz (And Fish)
 => posts/2022-01-29-proxying-gemini.gmi 📜2022-01-29 - Proxying Gemini to HTTPS
 => posts/2022-01-27-capsule-mirror-hard-way.gmi 📜2022-01-27 - Setting Up A Gemlog (and Capsule) and Mirroring It To HTTPS — The Hard Way
 

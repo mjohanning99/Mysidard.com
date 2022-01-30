@@ -42,5 +42,4 @@ for content in $contents_raw
 		end
 	end
 end
-
 %%%
