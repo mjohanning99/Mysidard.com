@@ -27,14 +27,19 @@ This sitemap is automatically created whenever its URL is accessed using the Bli
 ## Contents
 
 %%%
-set contents_raw (find serve/* -path "serve/bin" -prune -o -print)
+set contents_raw (find serve/* -path "serve/bin" -prune -o -path "serve/gemlog/templates" -prune -o -path "serve/gemlog/content" -prune -o -path "serve/gemlog/config.toml" -prune -o -print)
 
 for content in $contents_raw
+	set counter 0
 	set content_stripped (string replace "serve/" "" $content)
 	if test -d $content 
 		echo "=> $content_stripped 📂$content_stripped"
 	else
-		echo "=> $content_stripped ↳📄$content_stripped"
+		if string match -q 'serve/*/*' $content
+			echo "=> $content_stripped ↳📄$content_stripped"
+		else
+			echo "=> $content_stripped 📄$content_stripped"
+		end
 	end
 end
 
