@@ -7,8 +7,9 @@ set b_words (bliz_word_count)
 => /search test
 
 %%%
+set city $argv[3]
 rm serve/*.png*
-#set test (bash -c "wget wttr.in/Bielefeld.png -P serve/")
-echo "Fetched weather data for Berlin @ $b_current_time"
-echo "=> Berlin.png"
+set test (bash -c "wget wttr.in/$city.png -P serve/")
+echo "Fetched weather data for $city @ $b_current_time"
+echo "=> $city.png"
 %%% 
