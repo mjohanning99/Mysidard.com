@@ -4,12 +4,11 @@ set b_current_time (date +%c)
 set b_words (bliz_word_count)
 %%%
 
-% curl wttr.in/Nuremberg?format=3
-
-=> submit test
+=> /search test
 
 %%%
-set test (bash -c "curl wttr.in/Bielefeld?format=4")
-echo "Hello there"
-echo $test
+rm serve/*.png*
+#set test (bash -c "wget wttr.in/Bielefeld.png -P serve/")
+echo "Fetched weather data for Berlin @ $b_current_time"
+echo "=> Berlin.png"
 %%% 
