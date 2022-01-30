@@ -38,9 +38,6 @@ You can also find and message me on Mastodon.
 => https://mysidard.com 🕸HTTPS Mirror 
 This will lead you to the HTTPS version of my capsule. 
 
-=> gemlog/public/atom.xml ⚛Atom Feed
-This is the Atom feed for my Gemlog.
-
 => //skyjake.fi/lagrange/ 🌊Lagrange Browser
 Lagrange is my preferred browser for surfing Geminispace. I highly recommend you use it as well!
 
