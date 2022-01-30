@@ -6,6 +6,8 @@ set b_words (bliz_word_count)
 
 % curl wttr.in/Nuremberg?format=3
 
+=> submit test
+
 %%%
 set test (bash -c "curl wttr.in/Bielefeld?format=4")
 echo "Hello there"
