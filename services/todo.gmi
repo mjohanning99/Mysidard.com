@@ -1,0 +1,33 @@
+```
+                           .
+                          | \/|
+  (\   _                  ) )|/|
+      (/            _----. /.'.'
+.-._________..      .' @ _\  .'   
+'.._______.   '.   /    (_| .')
+  '._____.  /   '-/      | _.' 
+   '.______ (         ) ) \
+     '..____ '._       )  )
+        .' __.--\  , ,  // ((
+        '.'  mrf|  \/   (_.'(  
+                '   \ .' 
+                 \   (
+                  \   '.
+                   \ \ '.)
+                    '-'-'
+                  📑 T O D O 📜
+```
+=> /index.gmi 🏠Home 
+
+# To-Do List
+I am planning on writing a few services that will make HTTP-only sites available via Gemini and I am also planning on writing a few of my own things. This will probably take a while but here is a list of things I am planning on doing.
+
+* ☑️ → done
+* ☒ → work in progress
+* ☐ → not working on it yet
+
+## Proxies
+☒ Writing a Hacker News proxy
+
+## Non-Proxies
+☐ Search engine

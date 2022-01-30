@@ -27,6 +27,10 @@ Some information about the server running this capsule.
 => gemlog/public/index.gmi 💎My Gemlog
 This contains my gemlog, the Gemini version of a blog. On here, I will be posting about various topics that interest me, so be sure to check out the About Me page to find out what that might be.
 
+## Projects and Services
+=> services/todo.gmi 📝Planned Services (To-Do List)
+I am planning on writing a few proxy services on here. You can see what I have planned on this site.
+
 ## Links
 => links/index.gmi 🔗Links
 Here you will find some interesting Gemini — and non-Gemini — links to capsules and websites that I find interesting.
