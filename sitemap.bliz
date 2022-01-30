@@ -27,7 +27,7 @@ This sitemap is automatically created whenever its URL is accessed using the Bli
 ## Contents
 
 %%%
-set contents_raw (find serve/* -print)
+set contents_raw (find serve/* -not -path "serve/bin/*" -print)
 
 for content in $contents_raw
 	set content_stripped (string replace "serve/" "" $content)
