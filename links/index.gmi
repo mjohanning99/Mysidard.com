@@ -1,0 +1,30 @@
+```
+    ___       ___       ___       ___       ___   
+   /\__\     /\  \     /\__\     /\__\     /\  \  
+  /:/  /    _\:\  \   /:| _|_   /:/ _/_   /::\  \ 
+ /:/__/    /\/::\__\ /::|/\__\ /::-"\__\ /\:\:\__\
+ \:\  \    \::/\/__/ \/|::/  / \;:;-",-" \:\:\/__/
+  \:\__\    \:\__\     |:/  /   |:|  |    \::/  / 
+   \/__/     \/__/     \/__/     \|__|     \/__/  
+
+                  🪐  E x p l o r e  🛰
+```
+
+=> /index.gmi 🏠Home
+
+# Links
+You will find some links to interesting websites and capsules on this site. 
+
+## Geminispace
+=> //skyjake.fi/lagrange/ 🌊Lagrange Browser
+Lagrange is my preferred browser for surfing Geminispace. I highly recommend you use it as well!
+
+=> //cosmic.voyage  🚀Cosmic Voyage
+Community-based science-fiction writing.
+
+=> //warmedal.se/~antenna/ 📡Antenna
+A feed aggregator.
+
+## Web
+=> https://mysidard.com 🕸HTTPS Mirror 
+This will lead you to the HTTPS version of my capsule. 

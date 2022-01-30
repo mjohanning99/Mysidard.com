@@ -28,11 +28,8 @@ Some information about the server running this capsule.
 This contains my gemlog, the Gemini version of a blog. On here, I will be posting about various topics that interest me, so be sure to check out the About Me page to find out what that might be.
 
 ## Links
-=> https://mysidard.com 🕸HTTPS Mirror 
-This will lead you to the HTTPS version of my capsule. 
-
-=> //skyjake.fi/lagrange/ 🌊Lagrange Browser
-Lagrange is my preferred browser for surfing Geminispace. I highly recommend you use it as well!
+=> links/index.gmi 🔗Links
+Here you will find some interesting Gemini — and non-Gemini — links to capsules and websites that I find interesting.
 
 ## Sitemap
 => sitemap.bliz 🗺Sitemap
