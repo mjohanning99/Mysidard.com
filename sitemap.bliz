@@ -19,7 +19,7 @@ set b_words (bliz_word_count)
 /_________________________________________--"  
 ```
 
-=> /index.gmi 🏠Home
+=> /index.bliz 🏠Home
 
 # Sitemap for Mysidard.com
 This sitemap is automatically created whenever its URL is accessed using the Bliz Gemini server and a Fish script.

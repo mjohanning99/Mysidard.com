@@ -1,4 +1,4 @@
-=> /index.gmi 🏠Back Home
+=> /index.bliz 🏠Back Home
 => /gemlog/public/index.gmi 💎Back To Gemlog
 # Proxying Gemini to HTTPS
 On a previous post on my Gemlog, I talked about my rather convoluted way of converting my page to HTML and serving it via Apache to people on the regular Web; and whilst this admittedly rather strange setup worked for me, I wanted to find something that was a little easier to maintain and that would not require me to go through a tonne of steps simply to have a HTTPS version of my site available. I mentioned, in my previous post, how I was unable to find a suitable solution for this proxying / mirroring of my capsule — well, I have now finally come across one I really enjoy. 

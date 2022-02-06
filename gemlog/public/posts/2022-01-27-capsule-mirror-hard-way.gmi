@@ -1,4 +1,4 @@
-=> /index.gmi 🏠Back Home
+=> /index.bliz 🏠Back Home
 => /gemlog/public/index.gmi 💎Back To Gemlog
 # Setting Up A Gemlog (and Capsule) and Mirroring It To HTTPS — The Hard Way
 

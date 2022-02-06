@@ -10,7 +10,7 @@
                   🪐  E x p l o r e  🛰
 ```
 
-=> /index.gmi 🏠Home
+=> /index.bliz 🏠Home
 
 # Links
 You will find some links to interesting websites and capsules on this site. 

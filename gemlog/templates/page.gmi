@@ -1,4 +1,4 @@
-=> /index.gmi 🏠Back Home
+=> /index.bliz 🏠Back Home
 => /gemlog/public/index.gmi 💎Back To Gemlog
 {{ .Content }}
 {{ if .Date.IsZero -}}{{ else }}

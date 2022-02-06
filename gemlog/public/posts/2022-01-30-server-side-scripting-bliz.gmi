@@ -1,4 +1,4 @@
-=> /index.gmi 🏠Back Home
+=> /index.bliz 🏠Back Home
 => /gemlog/public/index.gmi 💎Back To Gemlog
 # Server-side Scripting Using Bliz (And Fish)
 I have been on the lookout for a nice, simple-to-use Gemini server that allows server-side scripting in a language that is not too difficult to learn — and I believe I may have found just that, namely the Bliz[1] server. I was surprised to learn that it was, out of all the scripting languages available, written in Fish[2] and that it works very nicely. 

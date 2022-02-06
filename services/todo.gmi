@@ -17,7 +17,7 @@
                     '-'-'
                   📑 T O D O 📜
 ```
-=> /index.gmi 🏠Home 
+=> /index.bliz 🏠Home 
 
 # To-Do List
 I am planning on writing a few services that will make HTTP-only sites available via Gemini and I am also planning on writing a few of my own things. This will probably take a while but here is a list of things I am planning on doing.

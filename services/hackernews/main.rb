@@ -3,6 +3,8 @@ require 'net/http'
 require 'json'
 require 'date'
 
+puts "=> /index.bliz 🏠Back Home"
+
 puts "# Hacker News Proxy 📰"
 puts "This is a small Hacker News Proxy written in Ruby. It is still a work in progress, but it already allows for the fetching of articles from the main page and reading of their comments."
 puts ""

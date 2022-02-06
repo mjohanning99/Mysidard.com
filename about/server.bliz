@@ -3,7 +3,7 @@ gem_header 20 'text/gemini'
 set b_current_time (date +%c)
 set b_words (bliz_word_count)
 %%%
-=> /index.gmi 🏠Home
+=> /index.bliz 🏠Home
 
 # About the Server
 Here you will find some information about the server that is running this capsule.
