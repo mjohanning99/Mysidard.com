@@ -1,0 +1,10 @@
+%%%
+gem_header 20 'text/gemini'
+set b_current_time (date +%c)
+set b_words (bliz_word_count)
+%%%
+
+%%%
+set directory (dirname $blizfile)
+ruby serve/test/test.rb
+%%% 

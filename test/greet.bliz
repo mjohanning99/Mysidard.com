@@ -1,0 +1,13 @@
+%%%
+if [ $req_query = "" ]
+	gem_header 10 'text/gemini'
+else
+	gem_header 20 'text/gemini'
+end
+%%%
+
+# Greeting test
+%%%
+set name $req_query
+echo "Hello and welcome to my test, $name"
+%%%
