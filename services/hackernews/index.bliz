@@ -1,0 +1,11 @@
+%%%
+if [ $req_query = "" ]
+	gem_header 10 'How many articles do you want to load?'
+else
+	gem_header 20 'text/gemini'
+end
+%%%
+
+%%%
+ruby serve/services/hackernews/hackernews.rb $req_query
+%%% 

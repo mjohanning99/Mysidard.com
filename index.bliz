@@ -1,3 +1,7 @@
+%%%
+gem_header 20 'text/gemini'
+%%%
+
 ```
       ███╗   ███╗██╗   ██╗███████╗██╗██████╗  █████╗ ██████╗ ██████╗ 
       ████╗ ████║╚██╗ ██╔╝██╔════╝██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗
@@ -28,6 +32,9 @@ Some information about the server running this capsule.
 This contains my gemlog, the Gemini version of a blog. On here, I will be posting about various topics that interest me, so be sure to check out the About Me page to find out what that might be.
 
 ## Projects and Services
+=> services/hackernews/index.bliz 📰Hacker News Proxy
+A Gemini proxy for Hacker News
+
 => services/todo.gmi 📝Planned Services (To-Do List)
 I am planning on writing a few proxy services on here. You can see what I have planned on this site.
 

@@ -5,6 +5,5 @@ set b_words (bliz_word_count)
 %%%
 
 %%%
-set directory (dirname $blizfile)
-ruby serve/test/test.rb
+ruby serve/services/hackernews/comments.rb $req_query
 %%% 
