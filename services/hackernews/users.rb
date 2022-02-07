@@ -3,6 +3,7 @@ require 'net/http'
 require 'json'
 require 'date'    
 require 'nokogiri'
+require 'reverse_markdown'
 
 puts "=> index.bliz 📰 Back To Overview"
 
@@ -41,7 +42,8 @@ def display_user_posts(num, user)
 
     elsif JSON.parse(res.body)["type"] == "comment" then
       puts DateTime.strptime(JSON.parse(res.body)["time"].to_s, "%s").strftime("### Comment from %d/%m/%Y at %H:%M")
-      puts Nokogiri::HTML(JSON.parse(res.body)["text"]).text
+      #puts Nokogiri::HTML(JSON.parse(res.body)["text"]).text
+      puts ReverseMarkdown.convert(Nokogiri::HTML(JSON.parse(res.body)["text"]).serialize)
     end
 
     puts ""
