@@ -15,7 +15,7 @@ def get_article(id)
   res = Net::HTTP.get_response(uri)
 
   json << res.body if res.is_a?(Net::HTTPSuccess)
-  puts "# Comments for: #{JSON.parse(json)['title']}\n" 
+  puts "# Comments for: #{JSON.parse(json)['title']} (⇧#{JSON.parse(json)['score']})\n" 
 
   puts "=> #{JSON.parse(json)['url']} 🌍 Article Link"
   puts ""
