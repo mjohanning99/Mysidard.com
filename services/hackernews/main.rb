@@ -9,12 +9,6 @@ puts "# Hacker News Proxy 📰"
 puts "This is a small Hacker News Proxy written in Ruby. It is still a work in progress, but it already allows for the fetching of articles from the main page, reading of their comments and viewing a user’s page. Click a username below to be taken to their userpage."
 puts ""
 
-class String
-  def numeric?
-    !self.match(/[^0-9]/)
-  end
-end
-
 def get_ids(url)
   uri = URI(url)
   res = Net::HTTP.get_response(uri)

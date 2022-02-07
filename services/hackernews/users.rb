@@ -4,6 +4,7 @@ require 'json'
 require 'date'    
 require 'nokogiri'
 require 'reverse_markdown'
+require_relative 'funcs.rb'
 
 puts "=> index.bliz 📰 Back To Overview"
 
@@ -42,8 +43,7 @@ def display_user_posts(num, user)
 
     elsif JSON.parse(res.body)["type"] == "comment" then
       puts DateTime.strptime(JSON.parse(res.body)["time"].to_s, "%s").strftime("### Comment from %d/%m/%Y at %H:%M")
-      #puts Nokogiri::HTML(JSON.parse(res.body)["text"]).text
-      puts ReverseMarkdown.convert(Nokogiri::HTML(JSON.parse(res.body)["text"]).serialize)
+      puts res.body.to_gemini("text")
     end
 
     puts ""
@@ -58,7 +58,7 @@ def display_user(id, num_posts)
 
   puts "## About"
   unless JSON.parse(user)["about"] == nil then 
-    puts Nokogiri::HTML(JSON.parse(user)["about"]).text
+    puts user.to_gemini("about")
   else 
     puts "#{id} does not appear to have anything in their about section." 
   end

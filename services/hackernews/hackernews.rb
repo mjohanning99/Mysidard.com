@@ -1,4 +1,4 @@
-require_relative 'main.rb'
+require_relative 'funcs.rb'
 
 num_of_articles = ARGV[0]
 if num_of_articles.numeric?() then
