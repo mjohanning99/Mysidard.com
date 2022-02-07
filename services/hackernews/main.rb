@@ -65,4 +65,3 @@ def parse_and_print(num)
     puts ""
   end
 end
-
