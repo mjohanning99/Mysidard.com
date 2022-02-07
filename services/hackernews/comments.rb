@@ -44,7 +44,7 @@ def display_comments(num, article_id)
     puts "## Comment by " + JSON.parse(comment)["by"]
     puts Nokogiri::HTML(JSON.parse(comment)["text"]).text
     puts DateTime.strptime(JSON.parse(comment)["time"].to_s, "%s").strftime("↳🕰 Published on %d/%m/%Y at %H:%M") 
-    puts "=> users.bliz?#{JSON.parse(comment)['by']}" + "↳📡 Display User Page"
+    puts "=> users.bliz?#{JSON.parse(comment)['by']}" + " ↳📡 Display User Page"
 
     puts ""
   end
