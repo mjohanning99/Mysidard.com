@@ -18,7 +18,7 @@ end
 
 def display_user(id)
   user = get_user(id)
-  
+
   puts "# Viewing user: #{JSON.parse(user)['id']}" + " (⇧#{JSON.parse(user)['karma']})" 
   puts DateTime.strptime(JSON.parse(user)["created"].to_s, "%s").strftime("This user account was created on %d/%m/%Y at %H:%M")
 
@@ -32,4 +32,4 @@ def display_user(id)
   puts 
 end
 
-display_user('mjohanning')
+display_user(ARGV[0])
