@@ -37,7 +37,10 @@ def display_user_posts(num, user)
 
     if JSON.parse(res.body)["type"] == "story" then
       puts "=> comments.bliz?#{post}" + " 📜 #{JSON.parse(res.body)['title']}"
+    elsif JSON.parse(res.body)["type"] == "comment" then
+      puts Nokogiri::HTML(JSON.parse(res.body)["text"]).text
     end
+    puts ""
   end
 end
 
@@ -54,7 +57,7 @@ def display_user(id, num_posts)
     puts "#{id} does not appear to have anything in their about section." 
   end
 
-  puts "## Created Posts (displaying the #{num_posts} latest posts)"
+  puts "## #{num_posts} Latest Posts and Comments"
   display_user_posts(10, user)
 end
 
