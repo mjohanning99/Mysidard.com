@@ -53,8 +53,8 @@ def parse_and_print(num)
     end
 
     puts "=> users.bliz?#{JSON.parse(story)['by']}" + " ✍️ " + JSON.parse(story)["by"]
-    puts DateTime.strptime(JSON.parse(story)["time"].to_s, "%s").strftime("🕰 Published on %d/%m/%Y at %H:%M") 
     puts "=> comments.bliz?#{JSON.parse(story)['id']}" + " 📝 Comments (#{JSON.parse(story)['descendants']})"
+    puts DateTime.strptime(JSON.parse(story)["time"].to_s, "%s").strftime("🕰 Published on %d/%m/%Y at %H:%M") 
 
     puts ""
   end
