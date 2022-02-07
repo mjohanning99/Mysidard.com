@@ -1,9 +1,5 @@
 %%%
-if [ $req_query = "ieieieieieeiieieieieie" ]
-	gem_header 10 'How many articles do you want to load?'
-else
-	gem_header 20 'text/gemini'
-end
+gem_header 20 'text/gemini'
 %%%
 
 %%%
