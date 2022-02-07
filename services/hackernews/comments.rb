@@ -3,6 +3,7 @@ require 'net/http'
 require 'json'
 require 'date'
 require 'nokogiri'
+require 'reverse_markdown'
 require_relative 'funcs.rb'
 
 puts "=> index.bliz 📰 Back To Overview"
