@@ -10,8 +10,7 @@ class String
 
     markdown.each_line do |line|
       if line =~ /^\\/ then
-        line.slice!(0)
-        parsed << line
+        parsed << line.slice!(0)
       else
         line.gsub!(/\[([^\]]+)\]\(([^)]+)\)/, '\1')
         if line =~ /^https?:/ then
