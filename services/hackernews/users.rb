@@ -1,7 +1,7 @@
 require 'uri'
 require 'net/http'
 require 'json'
-require 'date'
+require 'date'    
 require 'nokogiri'
 
 puts "=> index.bliz 📰 Back To Overview"
@@ -30,7 +30,7 @@ def get_user_posts(num, user)
   return json
 end
 
-def display_user_posts(num, user)
+def display_user_posts(num, user)   
   get_user_posts(num, user).each do |post|
     uri = URI("https://hacker-news.firebaseio.com/v0/item/#{post}.json?print=pretty)")
     res = Net::HTTP.get_response(uri)
@@ -55,7 +55,7 @@ def display_user(id, num_posts)
   puts DateTime.strptime(JSON.parse(user)["created"].to_s, "%s").strftime("This user account was created on %d/%m/%Y at %H:%M")
 
   puts "## About"
-  if JSON.parse(user)["about"] != nil then 
+  unless JSON.parse(user)["about"] == nil then 
     puts Nokogiri::HTML(JSON.parse(user)["about"]).text
   else 
     puts "#{id} does not appear to have anything in their about section." 
