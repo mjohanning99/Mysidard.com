@@ -66,7 +66,7 @@ def display_user(id, num_posts)
   end
 
   puts "## #{num_posts} Latest Posts and Comments"
-  display_user_posts(10, user)
+  display_user_posts(num_posts, user)
 end
 
-display_user(ARGV[0], 10)
+display_user(ARGV[0], 15)
