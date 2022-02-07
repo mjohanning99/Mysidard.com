@@ -28,10 +28,14 @@ def get_comment_ids(num, article)
   counter = 0
   comment_ids = Array.new
 
-  JSON.parse(article)["kids"].each do |comment|
-    comment_ids << comment
-    counter += 1
-    break if counter == num
+  begin
+    JSON.parse(article)["kids"].each do |comment|
+      comment_ids << comment
+      counter += 1
+      break if counter == num
+    end
+  rescue NoMethodError
+    comment_ids = "empty"
   end
 
   return comment_ids
@@ -40,11 +44,15 @@ end
 def display_comments(num, article_id)
   json = Array.new
 
-  get_comment_ids(num, get_article(article_id)).each do |id|
-    uri = URI("https://hacker-news.firebaseio.com/v0/item/#{id}.json?print=pretty)")
-    res = Net::HTTP.get_response(uri)
+  begin
+    get_comment_ids(num, get_article(article_id)).each do |id|
+      uri = URI("https://hacker-news.firebaseio.com/v0/item/#{id}.json?print=pretty)")
+      res = Net::HTTP.get_response(uri)
 
-    json << res.body if res.is_a?(Net::HTTPSuccess)
+      json << res.body if res.is_a?(Net::HTTPSuccess)
+    end
+  rescue NoMethodError
+    puts "There do not appear to be any comments here"
   end
 
   json.each do |comment|
