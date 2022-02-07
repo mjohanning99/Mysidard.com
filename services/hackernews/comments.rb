@@ -6,7 +6,6 @@ require 'nokogiri'
 
 puts "=> index.bliz 📰 Back To Overview"
 
-
 def get_article(id)
   json = String.new
 

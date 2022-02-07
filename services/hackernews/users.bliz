@@ -1,0 +1,7 @@
+%%%
+gem_header 20 'text/gemini'
+%%%
+
+%%%
+ruby serve/services/hackernews/users.rb $req_query
+%%% 
