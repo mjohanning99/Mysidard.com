@@ -42,13 +42,13 @@ def display_user_posts(num, user)
     if content_type == "story" then
       puts DateTime.strptime(JSON.parse(user_content)["time"].to_s, "%s").strftime("### Post from %d/%m/%Y at %H:%M")
       puts "=> comments.bliz?#{post}" + " 📜 #{JSON.parse(user_content)['title']}"
+      puts ""
 
     elsif content_type == "comment" && JSON.parse(user_content)["text"] != nil then
       puts DateTime.strptime(JSON.parse(user_content)["time"].to_s, "%s").strftime("### Comment from %d/%m/%Y at %H:%M")
       puts user_content.to_gemini("text")
     end
 
-    puts ""
   end
 end
 
