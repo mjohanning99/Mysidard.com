@@ -36,14 +36,15 @@ def display_user_posts(num, user)
   get_user_posts(num, user).each do |post|
     uri = URI("https://hacker-news.firebaseio.com/v0/item/#{post}.json?print=pretty)")
     res = Net::HTTP.get_response(uri)
+    user_content = res.body
 
-    if JSON.parse(res.body)["type"] == "story" then
-      puts DateTime.strptime(JSON.parse(res.body)["time"].to_s, "%s").strftime("### Post from %d/%m/%Y at %H:%M")
-      puts "=> comments.bliz?#{post}" + " 📜 #{JSON.parse(res.body)['title']}"
+    if JSON.parse(user_content)["type"] == "story" then
+      puts DateTime.strptime(JSON.parse(user_content)["time"].to_s, "%s").strftime("### Post from %d/%m/%Y at %H:%M")
+      puts "=> comments.bliz?#{post}" + " 📜 #{JSON.parse(user_content)['title']}"
 
-    elsif JSON.parse(res.body)["type"] == "comment" then
-      puts DateTime.strptime(JSON.parse(res.body)["time"].to_s, "%s").strftime("### Comment from %d/%m/%Y at %H:%M")
-      puts res.body.to_gemini("text")
+    elsif JSON.parse(user_content)["type"] == "comment" then
+      puts DateTime.strptime(JSON.parse(user_content)["time"].to_s, "%s").strftime("### Comment from %d/%m/%Y at %H:%M")
+      puts user_content.to_gemini("text")
     end
 
     puts ""

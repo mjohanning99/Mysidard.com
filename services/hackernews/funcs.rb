@@ -13,7 +13,12 @@ class String
         line.slice!(0)
         parsed << line
       else
-        parsed << line
+        line.gsub!(/\[([^\]]+)\]\(([^)]+)\)/, '\1')
+        if line =~ /^https?:/ then
+          parsed << "=> #{line}"
+        else
+          parsed << line
+        end
       end
     end
 
