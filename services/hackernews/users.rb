@@ -35,11 +35,13 @@ def display_user_posts(num, user)
     uri = URI("https://hacker-news.firebaseio.com/v0/item/#{post}.json?print=pretty)")
     res = Net::HTTP.get_response(uri)
 
-    puts JSON.parse(res.body)["title"] if JSON.parse(res.body)["type"] == "story"
+    if JSON.parse(res.body)["type"] == "story" then
+      puts "=> comments.bliz?#{post}" + " 📜 #{JSON.parse(res.body)['title']}"
+    end
   end
 end
 
-def display_user(id)
+def display_user(id, num_posts)
   user = get_user(id)
 
   puts "# Viewing user: #{JSON.parse(user)['id']}" + " (⇧#{JSON.parse(user)['karma']})" 
@@ -52,8 +54,8 @@ def display_user(id)
     puts "#{id} does not appear to have anything in their about section." 
   end
 
-  puts "## Created Posts"
+  puts "## Created Posts (displaying the #{num_posts} latest posts)"
   display_user_posts(10, user)
 end
 
-display_user(ARGV[0])
+display_user(ARGV[0], 10)
