@@ -18,6 +18,7 @@ def get_article(id)
   puts "# Comments for: #{JSON.parse(json)['title']} (⇧#{JSON.parse(json)['score']})\n" 
 
   puts "=> #{JSON.parse(json)['url']} 🌍 Article Link"
+  puts "=> users.bliz?#{JSON.parse(json)['by']} 📡 By #{JSON.parse(json)['by']}" 
   puts ""
 
   return json
