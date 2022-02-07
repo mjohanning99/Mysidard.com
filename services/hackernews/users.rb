@@ -36,10 +36,14 @@ def display_user_posts(num, user)
     res = Net::HTTP.get_response(uri)
 
     if JSON.parse(res.body)["type"] == "story" then
+      puts DateTime.strptime(JSON.parse(res.body)["time"].to_s, "%s").strftime("### Post from %d/%m/%Y at %H:%M")
       puts "=> comments.bliz?#{post}" + " 📜 #{JSON.parse(res.body)['title']}"
+
     elsif JSON.parse(res.body)["type"] == "comment" then
+      puts DateTime.strptime(JSON.parse(res.body)["time"].to_s, "%s").strftime("### Comment from %d/%m/%Y at %H:%M")
       puts Nokogiri::HTML(JSON.parse(res.body)["text"]).text
     end
+
     puts ""
   end
 end
